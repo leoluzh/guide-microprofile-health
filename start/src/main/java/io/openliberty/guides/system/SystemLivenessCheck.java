@@ -13,7 +13,7 @@ import org.eclipse.microprofile.health.Liveness;
 @ApplicationScoped
 public class SystemLivenessCheck implements HealthCheck {
 	
-	private static String LIVENESS_CHECK = SystemResource.class.getSimpleName() + " Liveness Check" ;
+	public static String LIVENESS_CHECK = SystemResource.class.getSimpleName() + " Liveness Check" ;
 	
 
 	@Override

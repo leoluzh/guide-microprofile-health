@@ -13,7 +13,7 @@ import org.eclipse.microprofile.health.Liveness;
 @ApplicationScoped
 public class InventoryLivenessCheck implements HealthCheck {
 
-	private static final String INVETORY_LIVENESS = InventoryResource.class.getSimpleName() + " Liveness Check" ;
+	public static final String LIVENESS_CHECK = InventoryResource.class.getSimpleName() + " Liveness Check" ;
 	
 	@Override
 	public HealthCheckResponse call() {
@@ -23,7 +23,7 @@ public class InventoryLivenessCheck implements HealthCheck {
 		long memoryMax = memory.getHeapMemoryUsage().getMax();
 		
 		return HealthCheckResponse
-			.named( INVETORY_LIVENESS ) 
+			.named( LIVENESS_CHECK ) 
 			.withData("memory used", memoryUsed )
 			.withData("memory max", memoryMax )
 			.state( memoryUsed < memoryMax * 0.9 )

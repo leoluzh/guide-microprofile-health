@@ -10,7 +10,7 @@ import org.eclipse.microprofile.health.Readiness;
 @ApplicationScoped
 public class SystemReadinessCheck implements HealthCheck {
 	
-	private static final String READINESS_CHECK = SystemResource.class.getSimpleName() + " Readiness Check" ;
+	public static final String READINESS_CHECK = SystemResource.class.getSimpleName() + " Readiness Check" ;
 	
 	@Override
 	public HealthCheckResponse call() {
